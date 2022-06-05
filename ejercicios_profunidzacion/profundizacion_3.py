@@ -18,11 +18,11 @@ notas = [70, 82, -1, 65, 55, 67, 87, 92, -1]
 Enunciado:
 Similar al ejercicio de "calificaciones":
 
-Debe caluclar el promedio de todas las notas que se encuentra
+Debe calcular el promedio de todas las notas que se encuentra
 almacenadas en una lista llamada "notas" que ya
 hemos definido al comienzo del archivo
 
-Luego transformar la califiación en una letra
+Luego transformar la calificación en una letra
 según la siguiente escala:
 - Si el puntaje es mayor igual a 90 --> imprimir A
 - Si el puntaje es mayor igual a 80 --> imprimir B
@@ -48,11 +48,35 @@ cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
 
 # Realice aquí el bucle para recorrer todas las notas
 # y cacular la sumatoria
+for puntaje in notas:
+    
+    if puntaje >= 0:
+        cantidad_notas = cantidad_notas + 1
+        sumatoria = sumatoria + puntaje
+
+    else:
+        cantidad_ausentes = cantidad_ausentes + 1
 
 # Terminado el bucle calcule el promedio como
 # promedio = sumatoria / cantidad_notas
+promedio = sumatoria / cantidad_notas
 
 # Utilice la nota promedio calculada y transformela
 # a calificación con letras, imprima en pantalla el resultado
+if promedio >= 90:
+    print('Calificación: A')
+
+elif promedio < 90 and promedio >= 80:
+    print('Calificación: B')
+
+elif promedio < 80 and promedio >= 70:
+    print('Calificación: C')
+
+elif promedio < 70 and promedio >= 60:
+    print('Calificación: D')
+
+else:
+    print('Calificación: F')
 
 # Imprima en pantalla al cantidad de ausentes
+print('Clases ausentes:', cantidad_ausentes)

@@ -28,14 +28,58 @@ print('Comenzamos a ponernos serios!')
 # Empezar aquí la resolución del ejercicio
 
 # inicio = ....
+inicio = int(input('Ingrese el primer número de la secuencia:'))
+
 # fin = ....
+fin = int(input('Ingrese el último número de la secuencia:'))
+
+# Creación de la secuencia de números como lista.
+
+secuencia = [inicio , fin] # Inicialmente se almacenan inicio y fin como elementos de una lista.
+
+nuevos_terminos = abs(inicio - fin) - 1  # Se establece cuántos términos hay entre inicio y fin.
+
+termino_agregado = inicio
+
+# En caso de que la secuencia sea creciente.
+if inicio < fin:
+    
+    for t in range(nuevos_terminos):
+        posicion = t + 1
+        termino_agregado = termino_agregado + 1
+        secuencia.insert(posicion, termino_agregado)
+
+# En caso que la secuencia sea decreciente.
+elif inicio > fin:
+    
+    for t in range(nuevos_terminos):
+        posicion = t + 1
+        termino_agregado = termino_agregado - 1
+        secuencia.insert(posicion, termino_agregado)
+
+# En la secuencia el inicio y el fin son el mismo número. 
+else:
+    print("La secuencia tiene un solo elemento repetido:", inicio,".")
+
+print(secuencia)
 
 # cantidad_numeros ....
+cantidad_numeros = 0
+
 # sumatoria ....
+sumatoria = 0
 
 # bucle.....
+for elemento in range(len(secuencia)):
+    cantidad_numeros = cantidad_numeros + 1
+    sumatoria = sumatoria + secuencia[elemento]
+
+print('Cantidad de números en la secuencia numérica:', cantidad_numeros)
+print('Sumatoria de los números de la secuencia numérica:', sumatoria)
 
 # Al terminar el bucle calcular el promedio como:
 # promedio = sumatoria / cantidad_numeros
+promedio = sumatoria / cantidad_numeros
 
 # Imprimir resultado en pantalla
+print('Promedio de los números de la secuencia:', promedio)

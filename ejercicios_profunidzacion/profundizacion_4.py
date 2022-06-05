@@ -46,23 +46,67 @@ print("Mi primer pasito en data analytics")
 temperatura_max = None      # Aquí debe ir almacenando la temp máxima
 temperatura_min = None      # Aquí debe ir almacenando la temp mínima
 temperatura_sumatoria = 0   # Aquí debe ir almacenando la suma de todas las temp
-temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el promedio
-temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
+temperatura_promedio = 0    # Al finalizar el loop deberá aquí almacenar el promedio
+temperatura_len = 0         # Aquí debe almacenar cuantas temperaturas hay en la lista
 
 # Colocar el bucle aqui......
+for registro in temp_dataloger:
+    
+    # Determinación de la temperatura máxima.
+    if registro == temp_dataloger[0]:
+        temperatura_max = temp_dataloger[0]
+
+    else:
+        if registro > temperatura_max:
+            temperatura_max = registro
+
+    # Determinación de la temperatura mínima.
+    if registro == temp_dataloger[0]:
+        temperatura_min = temp_dataloger[0]
+
+    else:
+       if registro < temperatura_min:
+           temperatura_min = registro
+
+    temperatura_sumatoria = temperatura_sumatoria + registro
+    temperatura_len = temperatura_len + 1
+
+print('Temperatura máxima:', temperatura_max)
+print('Temperatura mínima:', temperatura_min)
+print('Sumatoria de temperaturas:', temperatura_sumatoria)
+print('Cantidad de temperaturas:', temperatura_len)
+
 
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
 # usando la función "max" y la función "min" de python
 # función "max" --> https://www.w3schools.com/python/ref_func_max.asp
+if temperatura_max == max(temp_dataloger):
+    print ('temperatura_max y el resultado de la función max son iguales')
+
+else:
+    print('Error en el cálculo de temperatura_max')
+
 # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
+if temperatura_min == min(temp_dataloger):
+    print ('temperatura_min y el resultado de la función min son iguales')
+
+else:
+    print('Error en el cálculo de temperatura_min')
 
 # Al finalizar el bucle debe calcular el promedio como:
-# temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
+# temperatura_promedio = temperatura_sumatoria / cantidad_temperaturas
+promedio = temperatura_sumatoria / temperatura_len
+print('Promedio de temperaturas:', promedio)
 
 # Corroboren los resultados de temperatura_sumatoria
 # usando la función "sum"
 # función "sum" --> https://www.w3schools.com/python/ref_func_sum.asp
+if temperatura_sumatoria == sum(temp_dataloger):
+    print ('temperatura_sumatoria y el resultado de la función sum son iguales')
+
+else:
+    print('Error en el cálculo de temperatura_sumatoria')
 
 '''
 Una vez que tengamos nuestros valores correctamente calculados debemos
@@ -83,3 +127,14 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+if temperatura_min >= 19 and temperatura_max <= 28:
+    print('Estamos en verano.')
+
+if temperatura_min >= 11 and temperatura_max <= 20:
+    print('Estamos en otoño.')
+
+if temperatura_min >= 8 and temperatura_max <= 14:
+    print('Estamos en invierno.')
+
+if temperatura_min >= 10 and temperatura_max <= 24:
+    print('Estamos en primavera.')
