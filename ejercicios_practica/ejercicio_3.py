@@ -15,4 +15,17 @@
 numeros = [1, 5, -1, 6, 10, 2, -5]
 suma = 0   # Variable ya inicializada, la suma arranca en cero
 
-print("terminamos!, el resultado final almacenado en suma debe ser 18")
+for n in range(len(numeros)):
+    suma = suma + numeros[n]
+
+print("La sumatoria de la lista es", suma,".")
+
+# Versión 2
+suma = 0   # Para esta versión la variable suma es vuelta a cero
+
+for n in numeros:
+    suma = suma + n
+
+print("La sumatoria de la lista es", suma,".")
+
+print("¡Terminamos!, el resultado final almacenado en suma debe ser 18.")
