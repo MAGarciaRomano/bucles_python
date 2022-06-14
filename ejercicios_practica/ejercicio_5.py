@@ -20,35 +20,18 @@ inicio = int(input('Ingrese el primer número de la secuencia\n'))
 fin = int(input('Ingrese el último número de la secuencia\n'))
 sumatoria = 0  # Inicializo el contador en 0
 
-secuencia = [inicio , fin] # Se almacenan inicio y fin como elementos de una lista.
-
-nuevos_terminos = abs(inicio - fin) - 1  # Se establece cuántos términos hay entre inicio y fin.
-
-termino_agregado = inicio
-
 # En caso de que la secuencia sea creciente.
 if inicio < fin:
     
-    for t in range(nuevos_terminos):
-        posicion = t + 1
-        termino_agregado = termino_agregado + 1
-        secuencia.insert(posicion, termino_agregado)
-
-    # for ... in range(....)
-    for t in range(len(secuencia)):
-        sumatoria = sumatoria + secuencia[t]
+    for t in range(inicio, fin + 1):
+        sumatoria += t
 
 # En caso que la secuencia sea decreciente.
 elif inicio > fin:
     
-    for t in range(nuevos_terminos):
-        posicion = t + 1
-        termino_agregado = termino_agregado - 1
-        secuencia.insert(posicion, termino_agregado)
-
     # for ... in range(....)
-    for t in range(len(secuencia)):
-        sumatoria = sumatoria + secuencia[t]
+    for t in range(fin, inicio + 1):
+        sumatoria += t
 
 # El primer y el último elemento son iguales.
 else:
