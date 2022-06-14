@@ -56,16 +56,14 @@ for registro in temp_dataloger:
     if registro == temp_dataloger[0]:
         temperatura_max = temp_dataloger[0]
 
-    else:
-        if registro > temperatura_max:
+    elif registro > temperatura_max:
             temperatura_max = registro
 
     # Determinación de la temperatura mínima.
     if registro == temp_dataloger[0]:
         temperatura_min = temp_dataloger[0]
 
-    else:
-       if registro < temperatura_min:
+    elif registro < temperatura_min:
            temperatura_min = registro
 
     temperatura_sumatoria = temperatura_sumatoria + registro
@@ -130,11 +128,11 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 if temperatura_min >= 19 and temperatura_max <= 28:
     print('Estamos en verano.')
 
-if temperatura_min >= 11 and temperatura_max <= 20:
+elif temperatura_min >= 11 and temperatura_max <= 20:
     print('Estamos en otoño.')
 
-if temperatura_min >= 8 and temperatura_max <= 14:
+elif temperatura_min >= 8 and temperatura_max <= 14:
     print('Estamos en invierno.')
 
-if temperatura_min >= 10 and temperatura_max <= 24:
+elif temperatura_min >= 10 and temperatura_max <= 24:
     print('Estamos en primavera.')
